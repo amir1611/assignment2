@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
-abstract class Controller
+use App\Models\Customer;
+use Illuminate\Http\Request;
+
+class CustomerController extends Controller
 {
     public function index()
     {
@@ -10,6 +13,6 @@ abstract class Controller
         $customers = Customer::all();
 
         // Return the data to the view
-        return view('customers.index', compact('customers'));
+        return view('index', compact('customers'));
     }
 }
